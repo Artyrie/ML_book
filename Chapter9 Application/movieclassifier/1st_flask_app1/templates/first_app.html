@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>first_app</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        {% from "_formhelpers.html" import render_field %}
+        <div>Enter the nickname</div>
+        <form method=post action="/hello">
+            <dl>
+                {{ render_field(form.sayhello) }}
+            </dl>
+            <input type=submit value='name enter' name='submit_btn'>
+        </form>
+    </body>
+</html>
